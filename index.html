@@ -68,11 +68,15 @@
     }
 const allKeys=document.querySelectorAll('.key');
 
+function removeTransition(e)
+{
+  if(e.propertyName!='transform') return;
+  this.classList.remove('playing');
+}
 allKeys.forEach(key =>key.addEventListener('transitionend',removeTransition));
 window.addEventListener('keydown',justPlay);
 
 </script>
-
 </body>
 
 
